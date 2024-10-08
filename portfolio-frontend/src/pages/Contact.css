@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Josefin Sans Light';
+  src: url('../assets/fonts/josefin-sans-light-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Contact.css */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 画面中央に配置 */
+}
+
+.contact-form {
+  width: 80%; /* 必要に応じて幅を調整 */
+  max-width: 600px; /* 最大幅を設定 */
+  padding: 20px; /* フォーム内に余白を追加 */
+}
+
+h1 {
+  margin-bottom: 30px; /* タイトルの下に余白を追加 */
+  text-align: center; /* タイトルを中央揃えにする */
+  font-family: 'Josefin Sans Light', sans-serif;
+  color: #b77dab;
+  font-size: 75px !important;
+}
+
+.custom-btn {
+  background-color: #b77dab !important; /* 背景色 */
+  color: #fff !important; /* 文字色 */
+  border-radius: 5px !important;
+}
+
+.thank-you-message {
+  font-size: 3em; /* フォントサイズを大きく設定 */
+  font-family: 'Josefin Sans Light', sans-serif;
+  text-align: center; /* 中央に配置 */
+  margin-top: 20px; /* 上に少し余白を追加 */
+  color: #b77dab; /* 色を好みで設定 */
+}
+

@@ -1,0 +1,104 @@
+/* プラグインページのスタイル */
+.plugin-page {
+  display: flex;
+  padding-top: 80px;
+  width: 100vw;
+  background-color: #f6f6f6;
+}
+
+#overview,
+#usage,
+#CHORD_LOGIC,
+#download {
+  margin-bottom: 60px; /* 各セクションの間に50pxの余白を追加 */
+  padding-top: 20px;   /* 各セクションの上部に20pxの余白を追加 */
+}
+
+/* コンテンツ領域のスタイル */
+.content {
+  width: 70%;
+  margin-left: 12%;
+  text-align: left;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* 見出しのデザイン */
+.main-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 4px double #619f60;
+  border-radius: 15px;
+  color: #62a061;
+}
+
+.sub-heading {
+  font-size: 1.3em;
+  font-weight: normal;
+  margin-bottom: 0.8em;
+  border-bottom: 2px solid #a0cfa0;
+  color: #7ab97a;
+}
+
+/* 画像スタイル */
+.plugin-title-image,
+.plugin-sub-image{
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.plugin-function-image {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* 目次スタイル */
+.toc-container {
+  border: 2px solid #f4cccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.toc-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f6d4d5;
+}
+
+.toc-list {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+.toc-list li {
+  font-weight: bold;
+  color: #646669;
+  margin-bottom: 10px;
+}
+
+.toc-list ol {
+  list-style-type: decimal;
+  margin-top: 10px;
+  padding-left: 1.5em;
+}
+
+.toc-list ol li {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #646669;
+}
+

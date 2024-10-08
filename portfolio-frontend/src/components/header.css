@@ -1,0 +1,67 @@
+/* ロゴのスタイル */
+.brand-logo img {
+  height: 200px;  /* ロゴの高さを指定 */
+  width: auto;    /* アスペクト比を維持 */
+  margin-top: -58px;
+}
+
+/* メニューを左に移動 */
+ul.right {
+  margin-right: 100px; 
+}
+
+ul.right li a {
+  font-size: 17px;
+  text-decoration: none;  /* 下線を消す */
+  color: black;           /* フォント色を黒に設定 */
+  transition: background-color 0.3s ease;  /* 背景色の変化を滑らかに */
+  display: inline-block;
+  text-align: center;     /* テキストを中央揃え */
+  width: 170px;           /* メニューの横幅を指定 */
+}
+
+/* ホバー時の背景色とフォント色を変更 */
+ul.right li a:hover {
+  background-color: #f0f0f0;
+  color: #888888;
+}
+
+/* モバイル版 (画面幅600px以下) */
+@media (max-width: 600px) {
+    .brand-logo {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: -38px;
+    }
+    
+    .brand-logo img {
+      height: 150px; /* モバイル版ではロゴのサイズを小さく */
+      margin-top: 0;
+    }
+}
+
+.nav-wrapper {
+  background-color: white;  /* 背景色を白に */
+}
+
+.sidenav-trigger i {
+  font-size: 30px;  /* ハンバーガーメニューのサイズ */
+  color: black;     /* ハンバーガーメニューの色 */
+}
+
+header {
+  transition: top 0.3s ease-in-out;  /* ヘッダーの出現/消失を滑らかに */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header.hidden {
+  top: -100px;  /* ヘッダーを画面外に隠す */
+}
+
+header.visible {
+  top: 0;  /* ヘッダーを表示する */
+}
