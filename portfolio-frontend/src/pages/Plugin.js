@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import BulletinBoard from './BulletinBoard';
 import Login from './Login';
+import { useSectionObserver } from '../hooks/useSectionObserver'; 
 import './Plugin.css';
 
 function Plugin() {
@@ -30,50 +31,17 @@ function Plugin() {
     { label: 'プラグインのダウンロード', link: '#download' },
   ];
 
-  const [activeSection, setActiveSection] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [sections, setSections] = useState([]);  // セクションを管理するステートを追加
 
+  // useEffectでセクション要素を取得
   useEffect(() => {
     const mainSections = document.querySelectorAll('#overview, #usage, #CHORD_LOGIC, #download');
-    const chordLogicHeading = document.querySelector('#CHORD_LOGIC h4');  // #CHORD_LOGICの見出しをターゲットに
-  
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const sectionId = entry.target.id;
-  
-          if (entry.isIntersecting && sectionId !== 'CHORD_LOGIC') {
-            // 通常のセクション
-            setActiveSection(sectionId);
-          }
-        });
-      },
-      { threshold: 0.2 } // 通常のセクションの閾値
-    );
-  
-    const chordLogicObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection('CHORD_LOGIC');
-          }
-        });
-      },
-      { threshold: 0 }
-    );
-  
-    mainSections.forEach(section => observer.observe(section));
-    if (chordLogicHeading) {
-      chordLogicObserver.observe(chordLogicHeading);  // 見出しの監視
-    }
-  
-    return () => {
-      mainSections.forEach(section => observer.unobserve(section));
-      if (chordLogicHeading) {
-        chordLogicObserver.unobserve(chordLogicHeading);  // 見出しの監視を解除
-      }
-    };
+    setSections(mainSections);  // セクションをステートにセット
   }, []);
+
+  const activeSection = useSectionObserver(sections);  // カスタムフックを使用してアクティブなセクションを取得
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true); // ログイン状態をtrueに設定

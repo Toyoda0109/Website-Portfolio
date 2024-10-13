@@ -1,10 +1,92 @@
-.about-header {
+.portfolio-header-img {
+  width: 100%;
+}
+
+.about-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-content {
+  background-color: rgb(229, 232, 232);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.frofile-icon{
+  flex: 1;
+}
+
+.profile-img {
+  width: 100%; /* 幅は親要素に基づいて設定 */
+  max-width: 200px; /* 最大幅を設定 */
+  border-radius: 50%;
+  aspect-ratio: 1 / 1; /* 縦横比を1:1に指定（正方形） */
+}
+
+.profile-info {
+  flex: 2;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profile-info p {
+  align-self: flex-start; /* 自己紹介文だけを左詰めにする */
+  margin-bottom: 10px;
+}
+
+.profile-info h3 {
+  margin-bottom: 10px;
+  margin-top: -100px;
+  text-align: center;
+}
+
+.about-website-section {
+  margin-top: 50px;
+  background-color: rgb(240, 240, 240); /* セクションの背景色 */
+  padding: 20px;
+}
+
+.about-website-section h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.tech-section {
+  margin-top: 30px;
+}
+
+.tech-section h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.portfolio-header-img {
-  width: 100%;
-  max-width: 800px; /* 必要に応じて調整 */
-  height: auto;
+.tech-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 150px;
+}
+
+.tech-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.tech-item p {
+  font-size: 1em;
+  text-align: center;
 }
