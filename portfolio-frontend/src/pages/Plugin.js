@@ -33,6 +33,9 @@ function Plugin() {
 
   const [sections, setSections] = useState([]);  // セクションを管理するステートを追加
 
+  const publishedDate = "2024-01-01";  // 公開日を手動で設定
+  const updatedDate = new Date(document.lastModified).toLocaleDateString();  // 最終更新日を取得
+
   // useEffectでセクション要素を取得
   useEffect(() => {
     const mainSections = document.querySelectorAll('#overview, #usage, #CHORD_LOGIC, #download');
@@ -54,6 +57,7 @@ function Plugin() {
 
       <div className="content" id="top">
         <h4 className="plugin-title">【CHORDIN】和音コードをMIDI信号から検知するVSTプラグイン</h4>
+        <p>公開日: {publishedDate}最終更新日: {updatedDate}</p>
         <img src="/img/Plugin_title.png" alt="Plugin Title" className="plugin-title-image" />
 
         <div className="toc-container">

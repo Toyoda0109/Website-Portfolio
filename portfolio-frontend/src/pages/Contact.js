@@ -9,7 +9,7 @@ const Contact = () => {
     <div className="contact-form-container">
       <div className="contact-form">
         <h1>Contact</h1>
-        <p>プラグインに関する質問や要望、エラー報告、その他のご連絡は、下記のフォームをご利用いただくか、X（旧Twitter）にてお知らせください！</p>
+        <p>プラグインに関する質問や要望、不具合、その他のご連絡は、下記のフォームをご利用いただくか、X（旧Twitter）にてお知らせください！</p>
         <form onSubmit={handleSubmit} className="col s12">
           <div className="input-field">
             <input

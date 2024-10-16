@@ -16,10 +16,6 @@
   padding: 20px;
 }
 
-.frofile-icon{
-  flex: 1;
-}
-
 .profile-img {
   width: 100%; /* 幅は親要素に基づいて設定 */
   max-width: 200px; /* 最大幅を設定 */
@@ -86,7 +82,7 @@
   margin-bottom: 10px;
 }
 
-.tech-item p {
+.tech-descriptions li {
   font-size: 1em;
-  text-align: center;
+  margin-bottom: 10px;
 }
