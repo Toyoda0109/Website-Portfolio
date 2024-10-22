@@ -3,15 +3,16 @@ import './about.css'; // スタイルを追加する場合
 
 function About() {
   return (
+    <div className="about-pages">
+      <img src="/img/About_Header.png" alt="Portfolio Header" className="portfolio-header-img" draggable="false" />
     <div className="about-container">
       <div className="about-header">
-        <img src="/img/Portfolio-Headimg.jpg" alt="Portfolio Header" className="portfolio-header-img" />
       </div>
       <section className="profile-section">
         <h1>Profile</h1>
         <div className="profile-content">
           <div className="profile-icon">
-            <img src="/img/Skill_Icon/C.svg" alt="Profile" className="profile-img" />
+            <img src="/img/About_Icon.png" alt="Profile" className="profile-img" draggable="false" />
           </div>
           <div className="profile-info">
             <h3>KODAI TOYODA</h3>
@@ -47,7 +48,7 @@ function About() {
 
             <div className="tech-item">
               <img src="/img/Skill_Icon/css.svg" alt="CSS" className="tech-img" />
-              <p>CSS: Webサイト全体のデザインやレイアウト</p>
+              <p>CSS: Webサイト全体のデザインやレイアウト(Materialize Css)</p>
             </div>
             <div className="tech-item">
               <img src="/img/Skill_Icon/JavaScript.svg" alt="JavaScript" className="tech-img" />
@@ -62,7 +63,7 @@ function About() {
           <div className="tech-grid">
             <div className="tech-item">
               <img src="/img/Skill_Icon/NodeJS-Light.svg" alt="Node.js" className="tech-img" />
-              <p>Node.js: Contactページにおけるメール送信機能</p>
+              <p>Node.js: Contactページにおけるメール送信機能(Express.js)</p>
             </div>
             <div className="tech-item">
               <img src="/img/Skill_Icon/PHP-Light.svg" alt="PHP" className="tech-img" />
@@ -144,6 +145,7 @@ function About() {
         </p>
       </section>
 
+    </div>
     </div>
   );
 }

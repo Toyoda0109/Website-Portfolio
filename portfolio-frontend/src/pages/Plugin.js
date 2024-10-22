@@ -55,7 +55,7 @@ function Plugin() {
     <div className="plugin-page">
       <Sidebar contents={pluginContents} activeSection={activeSection} />
 
-      <div className="content" id="top">
+      <div className="plugin-content" id="top">
         <h4 className="plugin-title">【CHORDIN】和音コードをMIDI信号から検知するVSTプラグイン</h4>
         <p>公開日: {publishedDate}最終更新日: {updatedDate}</p>
         <img src="/img/Plugin_title.png" alt="Plugin Title" className="plugin-title-image" />
@@ -84,6 +84,18 @@ function Plugin() {
             CHORDINは、MIDI信号からリアルタイムに和音コードを自動的に検知・表示するプラグインです。音楽制作や演奏の際に、押さえた和音がどのようなコードであるかを即座に知ることができ、音楽理論の理解や即興演奏に役立ちます。
           </p>
           <p>また、転回系に対応しているため、同じコードでも異なるベース音を検出できます。</p>
+
+          <section id="plugin-video">
+            <h5 className="sub-heading">プラグインのデモ動画</h5>
+            <div className="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/9sTpxuaoYK4"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </section>
 
           <section id="supported-environments">
             <h5 className="sub-heading">対応環境</h5>

@@ -15,14 +15,14 @@
 }
 
 /* コンテンツ領域のスタイル */
-.content {
+.plugin-content {
   width: 70%;
-  margin-left: 12%;
+  margin-left: 22%;
   text-align: left;
 }
 
 @media (max-width: 1300px) {
-  .content {
+  .plugin-content {
     width: 100%;
     margin-left: 0;
   }
@@ -102,3 +102,8 @@
   color: #646669;
 }
 
+.video-container {
+  max-height: 75%;
+  max-width: 75%;
+  margin: 0 auto;
+}
