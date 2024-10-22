@@ -6,10 +6,10 @@
   background-color: #f6f6f6;
 }
 
-#overview,
-#usage,
+#PLUGIN_OVERVIEW,
+#PLUGIN_USAGE,
 #CHORD_LOGIC,
-#download {
+#PLUGIN_DOWNLOAD {
   margin-bottom: 60px; /* 各セクションの間に50pxの余白を追加 */
   padding-top: 20px;   /* 各セクションの上部に20pxの余白を追加 */
 }
@@ -42,15 +42,16 @@
 .sub-heading {
   font-size: 1.3em;
   font-weight: normal;
-  margin-bottom: 0.8em;
   border-bottom: 2px solid #a0cfa0;
   color: #7ab97a;
+  margin-top: 45px;
+  margin-bottom: 20px;
 }
 
 /* 画像スタイル */
 .plugin-title-image,
 .plugin-sub-image{
-  width: 50%;
+  width: 60%;
   height: auto;
   display: block;
   margin: 20px auto;
