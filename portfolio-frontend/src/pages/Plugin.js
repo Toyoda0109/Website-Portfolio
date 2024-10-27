@@ -34,7 +34,7 @@ const pluginContents = [
     children: [{ label: 'コード検出ロジックについて', link: '#chord-logic-details' }],
   },
   { label: 'プラグインのダウンロード', link: '#PLUGIN_DOWNLOAD' },
-  { label: 'POST', link: '#PLUGIN_POST' }  // 新しいPOSTセクションを追加
+  { label: 'POST', link: '#PLUGIN_POST' }
 ];
 
 function Plugin() {
@@ -46,7 +46,7 @@ function Plugin() {
 
   // セクションを監視するためのカスタムフック
   useEffect(() => {
-    const mainSections = document.querySelectorAll('#PLUGIN_OVERVIEW, #PLUGIN_USAGE, #CHORD_LOGIC, #PLUGIN_DOWNLOAD');
+    const mainSections = document.querySelectorAll('#PLUGIN_OVERVIEW, #PLUGIN_USAGE, #CHORD_LOGIC, #PLUGIN_DOWNLOAD, #PLUGIN_POST');
     setSections(mainSections);
   }, []);
 

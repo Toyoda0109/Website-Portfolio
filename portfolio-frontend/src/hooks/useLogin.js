@@ -17,8 +17,13 @@ export const useLogin = (onLoginSuccess) => {
 
       const data = await response.json();
       if (response.ok) {
+
+        setUsername(''); // ユーザー名をリセット
+        setPassword(''); // パスワードをリセット
+        // ログイン成功時の処理
         onLoginSuccess();
         localStorage.setItem('token', data.token);
+        
       } else {
         setLoginError('ログインに失敗しました。ユーザー名またはパスワードが間違っています。');
       }

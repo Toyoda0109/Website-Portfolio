@@ -25,33 +25,50 @@ function Header() {
           <ul className="right hide-on-med-and-down">
             <li><HashLink to="/#top">Top</HashLink></li>
             <li><a className="dropdown-trigger" href="#" data-target="plugin-dropdown">Plugin</a></li>
-            <li><HashLink to="/about">About</HashLink></li>
+            <li><a className="dropdown-trigger" href="#" data-target="about-dropdown">About</a></li> {/* About ドロップダウン */}
             <li><HashLink to="/contact">Contact</HashLink></li>
           </ul>
         </div>
       </nav>
 
-      {/* ドロップダウンメニュー */}
+      {/* Plugin ドロップダウンメニュー */}
       <ul id="plugin-dropdown" className="dropdown-content">
-        <li><HashLink to="/plugin#overview">プラグインの概要</HashLink></li>
-        <li><HashLink to="/plugin#usage">プラグインの使用方法</HashLink></li>
-        <li><HashLink to="/plugin#download">プラグインのダウンロード</HashLink></li>
-        <li><HashLink to="/plugin#forum">掲示板</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_OVERVIEW">プラグインの概要</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_USAGE">プラグインの使用方法</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_DOWNLOAD">プラグインのダウンロード</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_POST">POST</HashLink></li>
+      </ul>
+
+      {/* About ドロップダウンメニュー */}
+      <ul id="about-dropdown" className="dropdown-content">
+        <li><HashLink to="/about#PROFILE_SECTION">Profile</HashLink></li>
+        <li><HashLink to="/about#ABOUT_WEBSITE_SECTION">About this website</HashLink></li>
+        <li><HashLink to="/about#SKILLS_SECTION">Skills</HashLink></li>
+        <li><HashLink to="/about#INTRODUCTION_SECTION">Introduction</HashLink></li>
       </ul>
 
       {/* モバイル用サイドナビ */}
       <ul className="sidenav" id="mobile-nav">
         <li><HashLink to="/#top">Top</HashLink></li>
-        <li><button className="dropdown-trigger" data-target="plugin-dropdown-mobile">Plugin</button></li>
-        <li><HashLink to="/about">About</HashLink></li>
+        <li><a className="dropdown-trigger" href="#" data-target="plugin-dropdown-mobile">Plugin</a></li>
+        <li><a className="dropdown-trigger" href="#" data-target="about-dropdown-mobile">About</a></li>
         <li><HashLink to="/contact">Contact</HashLink></li>
       </ul>
 
+      {/* モバイル用 Plugin ドロップダウン */}
       <ul id="plugin-dropdown-mobile" className="dropdown-content">
-        <li><HashLink to="/plugin#overview">プラグインの概要</HashLink></li>
-        <li><HashLink to="/plugin#usage">プラグインの使用方法</HashLink></li>
-        <li><HashLink to="/plugin#download">プラグインのダウンロード</HashLink></li>
-        <li><HashLink to="/plugin#forum">掲示板</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_OVERVIEW">プラグインの概要</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_USAGE">プラグインの使用方法</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_DOWNLOAD">プラグインのダウンロード</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_POST">POST</HashLink></li>
+      </ul>
+
+      {/* モバイル用 About ドロップダウン */}
+      <ul id="about-dropdown-mobile" className="dropdown-content">
+        <li><HashLink to="/about#PROFILE_SECTION">Profile</HashLink></li>
+        <li><HashLink to="/about#ABOUT_WEBSITE_SECTION">About this website</HashLink></li>
+        <li><HashLink to="/about#SKILLS_SECTION">Skills</HashLink></li>
+        <li><HashLink to="/about#INTRODUCTION_SECTION">Introduction</HashLink></li>
       </ul>
     </header>
   );

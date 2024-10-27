@@ -25,6 +25,9 @@
   .plugin-content {
     width: 100%;
     margin-left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box; /* paddingを含めて全体の幅を100%に保つ */
   }
 }
 

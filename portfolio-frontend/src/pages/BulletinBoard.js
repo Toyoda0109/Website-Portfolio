@@ -43,24 +43,37 @@ const BulletinBoard = ({ isAdmin }) => {
     }
   };
 
+  // if文を使ってフォームと投稿表示を制御
+  let adminForm = null;
+  if (isAdmin) {
+    adminForm = (
+      <form onSubmit={handleSubmit}>
+        <textarea name="comment" placeholder="お知らせを入力" required />
+        <button type="submit">投稿</button>
+      </form>
+    );
+  }
+
   return (
     <div>
-      <h2>お知らせ掲示板</h2>
-
-      {isAdmin && (
-        <form onSubmit={handleSubmit}>
-          <textarea name="comment" placeholder="お知らせを入力" required />
-          <button type="submit">投稿</button>
-        </form>
-      )}
+      {/* 管理者向けフォームの表示 */}
+      {adminForm}
 
       <ul>
-        {posts.map((post, index) => (
-          <li key={index}>
-            <strong>{post.name}</strong>
-            <p>{post.comment}</p>
-          </li>
-        ))}
+        {posts.map((post, index) => {
+          let dateDisplay = '日付不明';
+          if (post.created_at && !isNaN(new Date(post.created_at))) {
+            dateDisplay = new Date(post.created_at).toLocaleString(); // 日付と時間を表示
+          }
+
+          return (
+            <li key={index}>
+              <strong style={{ color: 'blue' }}>{post.name}:</strong> {/* 管理者: の形式で表示 */}
+              <span> {dateDisplay}</span>
+              <p>{post.comment}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

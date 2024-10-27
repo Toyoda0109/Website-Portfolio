@@ -1,6 +1,6 @@
 .portfolio-header-img {
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   object-fit: cover;
 }
 
@@ -19,29 +19,34 @@
 }
 
 .profile-img {
-  width: 100%; /* 幅は親要素に基づいて設定 */
+  width: 25vw;
   max-width: 200px; /* 最大幅を設定 */
   border-radius: 50%;
   aspect-ratio: 1 / 1; /* 縦横比を1:1に指定（正方形） */
 }
 
 .profile-info {
-  flex: 2;
-  padding-left: 20px;
+  padding-left: 20px; /* 既存の余白 */
+  margin-left: 20px; /* アイコンとの間に追加の間隔を設定 */
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.profile-info p {
-  align-self: flex-start; /* 自己紹介文だけを左詰めにする */
-  margin-bottom: 10px;
+.profile-info h3{
+  text-align: center;
 }
 
-.profile-info h3 {
-  margin-bottom: 10px;
-  margin-top: -100px;
-  text-align: center;
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px; /* アイコン間のスペース */
+}
+
+.social-icon {
+  width: 30px; /* アイコンの幅 */
+  height: 30px; /* アイコンの高さ */
 }
 
 .about-website-section {
@@ -87,4 +92,16 @@
 .tech-descriptions li {
   font-size: 1em;
   margin-bottom: 10px;
+}
+
+/* ぼやけエフェクトの定義 */
+.blur-in {
+  filter: blur(8px);
+  opacity: 1;
+  transition: filter 1s ease-out, opacity 1s ease-out;
+}
+
+.blur-in.visible {
+  filter: blur(0);  /* クリアにする */
+  opacity: 1;  /* 表示 */
 }

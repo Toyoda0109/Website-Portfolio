@@ -15,7 +15,7 @@ const Login = ({ onLoginSuccess }) => {
 
   // 管理者IPでない場合、アクセス権限がないと表示
   if (!isAdminIp) {
-    return <p>アクセス権がありません。</p>;
+    return ;
   }
 
   return (
