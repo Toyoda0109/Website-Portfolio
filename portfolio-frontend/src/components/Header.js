@@ -44,7 +44,6 @@ function Header() {
         <li><HashLink to="/about#PROFILE_SECTION">Profile</HashLink></li>
         <li><HashLink to="/about#ABOUT_WEBSITE_SECTION">About this website</HashLink></li>
         <li><HashLink to="/about#SKILLS_SECTION">Skills</HashLink></li>
-        <li><HashLink to="/about#INTRODUCTION_SECTION">Introduction</HashLink></li>
       </ul>
 
       {/* モバイル用サイドナビ */}
@@ -68,7 +67,6 @@ function Header() {
         <li><HashLink to="/about#PROFILE_SECTION">Profile</HashLink></li>
         <li><HashLink to="/about#ABOUT_WEBSITE_SECTION">About this website</HashLink></li>
         <li><HashLink to="/about#SKILLS_SECTION">Skills</HashLink></li>
-        <li><HashLink to="/about#INTRODUCTION_SECTION">Introduction</HashLink></li>
       </ul>
     </header>
   );

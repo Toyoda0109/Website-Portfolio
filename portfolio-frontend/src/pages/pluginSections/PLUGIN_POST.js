@@ -19,7 +19,6 @@ function PLUGIN_POST() {
  ／ └(＿＿＿／
  ￣￣￣￣￣￣￣`}
       </pre>
-      <p>うるさいゾ</p><br/>
     </section>
     
   );

@@ -1,0 +1,20 @@
+.hello-world-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e5e7ee;
+  color: #696464;
+}
+
+.hello-world-text {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
