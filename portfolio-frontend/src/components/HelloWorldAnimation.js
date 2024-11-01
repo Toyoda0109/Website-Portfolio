@@ -1,25 +1,47 @@
 import React, { useState, useEffect } from 'react';
+import useAnimationComplete from '../hooks/useAnimationComplete';
 import './HelloWorldAnimation.css';
 
 const HelloWorldAnimation = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [index, setIndex] = useState(0); // indexをstateとして管理
   const text = "Hello World!";
+  const [displayedText, setDisplayedText] = useState([]);
+  const animationComplete = useAnimationComplete(2500); // アニメーション完了後に表示
 
   useEffect(() => {
-    if (index < text.length) {
-      const interval = setInterval(() => {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex((prev) => prev + 1); // indexを更新
-      }, 100);
-
-      return () => clearInterval(interval); // クリーンアップ
-    }
-  }, [index]); // indexが変更されるたびにuseEffectが再実行される
+    setDisplayedText(text.split(''));
+  }, []);
 
   return (
     <div className="hello-world-container">
-      <h1 className="hello-world-text">{displayedText}</h1>
+      {/* フェードアウト後にスライドするオーバーレイ */}
+      {!animationComplete && (
+        <>
+          <div className="left-triangle-overlay delay-negative0"></div>
+          <div className="right-triangle-overlay delay-negative0"></div>
+          <div className="left-triangle-overlay delay-negative1"></div>
+          <div className="right-triangle-overlay delay-negative1"></div>
+          <div className="left-triangle-overlay delay-negative2"></div>
+          <div className="right-triangle-overlay delay-negative2"></div>
+          <div className="left-triangle-overlay delay-negative3"></div>
+          <div className="right-triangle-overlay delay-negative3"></div>
+          <div className="left-triangle-overlay"></div>
+          <div className="right-triangle-overlay"></div>
+          <div className="left-triangle-overlay delay-positive"></div>
+          <div className="right-triangle-overlay delay-positive"></div>
+        </>
+      )}
+      
+      {/* 白い枠線と文字を包むコンテナ */}
+      <div className="hello-world-border">
+        <h1 className="hello-world-text">
+          {displayedText.map((char, index) => (
+            <span key={index} className="wave-text" style={{ animationDelay: `${index * 0.1}s` }}>
+              {char}
+            </span>
+          ))}
+        </h1>
+      </div>
+      <div className="underline"></div>
     </div>
   );
 };

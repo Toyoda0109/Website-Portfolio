@@ -6,7 +6,7 @@ import { useBlurEffect } from '../hooks/useBlurEffect';
 
 function About() {
   // 3秒間のアニメーションの完了状態を管理
-  const animationComplete = useAnimationComplete(3000);
+  const animationComplete = useAnimationComplete(2500);
   
   // 各セクションの参照を作成
   const headerRef = useRef(null);
