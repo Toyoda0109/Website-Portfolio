@@ -1,16 +1,27 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useScrollVisibility } from '../hooks/useScrollVisibility';  // スクロール制御用カスタムフック
-import { useMaterializeInit } from '../hooks/useMaterializeInit';  // Materialize初期化用カスタムフック
-import { HashLink } from 'react-router-hash-link';  // HashLinkを使用
+import { useScrollVisibility } from '../hooks/useScrollVisibility';
+import { useMaterializeInit } from '../hooks/useMaterializeInit';
+import { useCloseOnDropdownClick } from '../hooks/useCloseOnDropdownClick';  // ドロップダウン用フック
+import { HashLink } from 'react-router-hash-link';
+import M from 'materialize-css';
 import './header.css';
 
 function Header() {
-  const isVisible = useScrollVisibility();  // ヘッダーの表示/非表示を制御
-  useMaterializeInit();  // Materializeのコンポーネントを初期化
-  const location = useLocation();  // 現在のパスを取得
+  const isVisible = useScrollVisibility();
+  useMaterializeInit();
+  useCloseOnDropdownClick();
+  const location = useLocation();
 
   const logo = location.pathname === '/about' ? '/img/Portfolio_LOGO.png' : '/img/CHORDIN_LOGO.png';
+
+  // サイドナビをリンククリック時に閉じる
+  const handleNavLinkClick = () => {
+    const sidenavInstance = M.Sidenav.getInstance(document.getElementById('mobile-nav'));
+    if (sidenavInstance) {
+      sidenavInstance.close();
+    }
+  };
 
   return (
     <header className={isVisible ? 'visible' : 'hidden'}>
@@ -25,7 +36,7 @@ function Header() {
           <ul className="right hide-on-med-and-down">
             <li><HashLink to="/#top">Top</HashLink></li>
             <li><a className="dropdown-trigger" href="#" data-target="plugin-dropdown">Plugin</a></li>
-            <li><a className="dropdown-trigger" href="#" data-target="about-dropdown">About</a></li> {/* About ドロップダウン */}
+            <li><a className="dropdown-trigger" href="#" data-target="about-dropdown">About</a></li>
             <li><HashLink to="/contact">Contact</HashLink></li>
           </ul>
         </div>
@@ -48,25 +59,25 @@ function Header() {
 
       {/* モバイル用サイドナビ */}
       <ul className="sidenav" id="mobile-nav">
-        <li><HashLink to="/#top">Top</HashLink></li>
+        <li><HashLink to="/#top" onClick={handleNavLinkClick}>Top</HashLink></li>
         <li><a className="dropdown-trigger" href="#" data-target="plugin-dropdown-mobile">Plugin</a></li>
         <li><a className="dropdown-trigger" href="#" data-target="about-dropdown-mobile">About</a></li>
-        <li><HashLink to="/contact">Contact</HashLink></li>
+        <li><HashLink to="/contact" onClick={handleNavLinkClick}>Contact</HashLink></li>
       </ul>
 
       {/* モバイル用 Plugin ドロップダウン */}
       <ul id="plugin-dropdown-mobile" className="dropdown-content">
-        <li><HashLink to="/plugin#PLUGIN_OVERVIEW">プラグインの概要</HashLink></li>
-        <li><HashLink to="/plugin#PLUGIN_USAGE">プラグインの使用方法</HashLink></li>
-        <li><HashLink to="/plugin#PLUGIN_DOWNLOAD">プラグインのダウンロード</HashLink></li>
-        <li><HashLink to="/plugin#PLUGIN_POST">POST</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_OVERVIEW" onClick={handleNavLinkClick}>プラグインの概要</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_USAGE" onClick={handleNavLinkClick}>プラグインの使用方法</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_DOWNLOAD" onClick={handleNavLinkClick}>プラグインのダウンロード</HashLink></li>
+        <li><HashLink to="/plugin#PLUGIN_POST" onClick={handleNavLinkClick}>POST</HashLink></li>
       </ul>
 
       {/* モバイル用 About ドロップダウン */}
       <ul id="about-dropdown-mobile" className="dropdown-content">
-        <li><HashLink to="/about#PROFILE_SECTION">Profile</HashLink></li>
-        <li><HashLink to="/about#ABOUT_WEBSITE_SECTION">About this website</HashLink></li>
-        <li><HashLink to="/about#SKILLS_SECTION">Skills</HashLink></li>
+        <li><HashLink to="/about#PROFILE_SECTION" onClick={handleNavLinkClick}>Profile</HashLink></li>
+        <li><HashLink to="/about#ABOUT_WEBSITE_SECTION" onClick={handleNavLinkClick}>About this website</HashLink></li>
+        <li><HashLink to="/about#SKILLS_SECTION" onClick={handleNavLinkClick}>Skills</HashLink></li>
       </ul>
     </header>
   );

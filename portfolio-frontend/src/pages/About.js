@@ -40,7 +40,7 @@ function About() {
           <div className="about-container">
             
             <section id="PROFILE_SECTION" className="profile-section blur-in" ref={profileSectionRef}>
-              <h1>Profile</h1>
+            <h1>Profile</h1>
               <div className="profile-content">
                 <div className="profile-icon">
                   <img 
@@ -71,47 +71,49 @@ function About() {
 
             <section id="ABOUT_WEBSITE_SECTION" className="about-website-section blur-in" ref={aboutWebsiteRef}>
               <h1>About this website</h1>
-              <p>
-                このWebサイトは、作曲支援のために作成したVSTプラグインを配布する目的で制作しました。
-                DAW上で多様なコードを検知できるプラグインが見つからず、作成することにしました。
-                音楽活動をしているものの音楽理論に不安がある方(自分のように）の助けになれば嬉しいです。また、このWebサイトは自分のポートフォリオとしても兼ねています。
-              </p>
-              <p>
-                下記には、Webサイト作成に使用した言語やフレームワークを紹介しています。
-              </p>
-
-              <div className="tech-section">
-                <h2>Frontend</h2>
-                <div className="tech-grid">
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/React-Light.svg" alt="React" className="tech-img" />
-                    <p>React: サイトのユーザーインターフェースの構築やコンポーネントの管理</p>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/css.svg" alt="CSS" className="tech-img" />
-                    <p>CSS: Webサイト全体のデザインやレイアウト(Materialize Css)</p>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/JavaScript.svg" alt="JavaScript" className="tech-img" />
-                    <p>JavaScript: ユーザーの操作に応じた動的なコンテンツの表示</p>
+              <div className="about-website-content">
+                <p>
+                  このWebサイトは、作曲支援のために作成したVSTプラグインを配布する目的で制作しました。
+                  DAW上で多様なコードを検知できるプラグインが見つからず、作成することにしました。
+                  音楽活動をしているものの音楽理論に不安がある方(自分のように）の助けになれば嬉しいです。また、このWebサイトは自分のポートフォリオとしても兼ねています。
+                </p>
+                <p>
+                  下記には、Webサイト作成に使用した言語やフレームワークを紹介しています。
+                </p>
+  
+                <div className="tech-section">
+                  <h2>Frontend</h2>
+                  <div className="tech-grid">
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/React-Light.svg" alt="React" className="tech-img" />
+                      <p>React: サイトのユーザーインターフェースの構築やコンポーネントの管理</p>
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/css.svg" alt="CSS" className="tech-img" />
+                      <p>CSS: Webサイト全体のデザインやレイアウト(Materialize Css)</p>
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/JavaScript.svg" alt="JavaScript" className="tech-img" />
+                      <p>JavaScript: ユーザーの操作に応じた動的なコンテンツの表示</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="tech-section">
-                <h2>Backend</h2>
-                <div className="tech-grid">
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/NodeJS-Light.svg" alt="Node.js" className="tech-img" />
-                    <p>Node.js: Contactページにおけるメール送信機能(Express.js)</p>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/PHP-Light.svg" alt="PHP" className="tech-img" />
-                    <p>PHP: Postでの簡易掲示板機能</p>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/MySQL-Light.svg" alt="MySQL" className="tech-img" />
-                    <p>MySQL: 掲示板のデータ管理</p>
+                <div className="tech-section">
+                  <h2>Backend</h2>
+                  <div className="tech-grid">
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/NodeJS-Light.svg" alt="Node.js" className="tech-img" />
+                      <p>Node.js: Contactページにおけるメール送信機能(Express.js)</p>
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/PHP-Light.svg" alt="PHP" className="tech-img" />
+                      <p>PHP: Postでの簡易掲示板機能</p>
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/MySQL-Light.svg" alt="MySQL" className="tech-img" />
+                      <p>MySQL: 掲示板のデータ管理</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -119,61 +121,62 @@ function About() {
 
             <section id="SKILLS_SECTION" className="skills-section blur-in" ref={skillsRef}>
               <h1>Skills</h1>
-              <p>
-                このセクションでは、その他使用したことのあるプログラミング言語やツールを提示しています。(実務経験は御座いません)
-              </p>
-              <div className="skills-subsection">
-                <h2>Languages</h2>
-                <div className="tech-grid">
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/Java-Light.svg" alt="Java" className="tech-img" />
+              <div className="skills-content">
+                <p>
+                  このセクションでは、その他使用したことのあるプログラミング言語やツールを提示しています。(実務経験は御座いません)
+                </p>
+                <div className="skills-subsection">
+                  <h2>Languages</h2>
+                  <div className="tech-grid">
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/Java-Light.svg" alt="Java" className="tech-img" />
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/Cpp.svg" alt="Cpp" className="tech-img" />
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/C.svg" alt="C" className="tech-img" />
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/Python-Light.svg" alt="Python" className="tech-img" />
+                    </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/HTML.svg" alt="HTML" className="tech-img" />
+                    </div>
                   </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/Cpp.svg" alt="Cpp" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/C.svg" alt="C" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/Python-Light.svg" alt="Python" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/HTML.svg" alt="HTML" className="tech-img" />
+                  <div className="tech-descriptions">
+                    <li>Java: 作曲支援ソフトの開発を行う研究に使用しています</li>
+                    <li>C++: 和音コード検知プラグインに使用しています</li>
+                    <li>C, Python: 大学のカリキュラム上で学習、基本的なアルゴリズムやデータ構造など</li>
+                    <li>HTML: Web開発等</li>
                   </div>
                 </div>
-                <div className="tech-descriptions">
-                  <li>Java: 作曲支援ソフトの開発を行う研究に使用しています</li>
-                  <li>C++: 和音コード検知プラグインに使用しています</li>
-                  <li>C, Python: 大学のカリキュラム上で学習、基本的なアルゴリズムやデータ構造など</li>
-                  <li>HTML: Web開発等</li>
-                </div>
-              </div>
 
-              <div className="skills-subsection">
-                <h2>Tools</h2>
-                <div className="tech-grid">
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/Github-Dark.svg" alt="Git" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/git.svg" alt="Git" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/Eclipse-Light.svg" alt="Eclipse" className="tech-img" />
-                  </div>
-                  <div className="tech-item">
-                    <img src="/img/Skill_Icon/VisualStudio-Light.svg" alt="VisualStudio" className="tech-img" />
+                <div className="skills-subsection">
+                  <h2>Tools</h2>
+                    <div className="tech-grid">
+                      <div className="tech-item">
+                        <img src="/img/Skill_Icon/Github-Dark.svg" alt="Git" className="tech-img" />
+                      </div>
+                      <div className="tech-item">
+                        <img src="/img/Skill_Icon/git.svg" alt="Git" className="tech-img" />
+                      </div>
+                      <div className="tech-item">
+                        <img src="/img/Skill_Icon/Eclipse-Light.svg" alt="Eclipse" className="tech-img" />
+                      </div>
+                      <div className="tech-item">
+                        <img src="/img/Skill_Icon/VisualStudio-Light.svg" alt="VisualStudio" className="tech-img" />
+                      </div>
+                    </div>
+                    <div className="tech-descriptions">
+                      <li>Github, Git: 開発におけるバージョン管理、コード管理</li>
+                      <li>Eclipse, Vscode: コードエディタ</li>
+                    </div>
                   </div>
                 </div>
-                <div className="tech-descriptions">
-                  <li>Github, Git: 開発におけるバージョン管理、コード管理</li>
-                  <li>Eclipse, Vscode: コードエディタ</li>
-                </div>
-              </div>
-            </section>
-
+              </section>
+            </div>
           </div>
-        </div>
       )}
     </div>
   );

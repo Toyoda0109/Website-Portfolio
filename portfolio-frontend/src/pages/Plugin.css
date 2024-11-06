@@ -3,13 +3,30 @@
   display: flex;
   padding-top: 80px;
   width: 100vw;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
 }
+
+.plugin-meta {
+  margin-top: 0.5em;
+}
+
+.tag {
+  background-color: #f0f0f0; /* タグの背景色 */
+  color: #333; /* テキストの色 */
+  padding: 5px 10px; /* 内側の余白 */
+  font-size: 0.9em; /* フォントサイズ */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 5px; /* 角を丸くする */
+  display: inline-block;
+  margin-right: 5px; /* タグ間のスペース */
+}
+
 
 #PLUGIN_OVERVIEW,
 #PLUGIN_USAGE,
 #CHORD_LOGIC,
-#PLUGIN_DOWNLOAD {
+#PLUGIN_DOWNLOAD,
+#PLUGIN_POST {
   margin-bottom: 60px; /* 各セクションの間に50pxの余白を追加 */
   padding-top: 20px;   /* 各セクションの上部に20pxの余白を追加 */
 }
@@ -17,7 +34,7 @@
 /* コンテンツ領域のスタイル */
 .plugin-content {
   width: 70%;
-  margin-left: 22%;
+  margin-left: 25%;
   text-align: left;
 }
 
@@ -67,47 +84,10 @@
   margin: 20px auto;
 }
 
-/* 目次スタイル */
-.toc-container {
-  border: 2px solid #f4cccc;
-  border-radius: 10px;
-  padding: 20px;
-  width: 80%;
-  margin: 20px auto;
-}
-
-.toc-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #f6d4d5;
-}
-
-.toc-list {
-  list-style-type: decimal;
-  padding-left: 1.5em;
-}
-
-.toc-list li {
-  font-weight: bold;
-  color: #646669;
-  margin-bottom: 10px;
-}
-
-.toc-list ol {
-  list-style-type: decimal;
-  margin-top: 10px;
-  padding-left: 1.5em;
-}
-
-.toc-list ol li {
-  font-weight: normal;
-  font-size: 0.9em;
-  color: #646669;
-}
 
 .video-container {
   max-height: 75%;
   max-width: 75%;
   margin: 0 auto;
 }
+

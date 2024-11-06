@@ -2,40 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import BulletinBoard from './BulletinBoard';
 import Login from './Login';
-import { useSectionObserver } from '../hooks/useSectionObserver'; 
+import { useSectionObserver } from '../hooks/useSectionObserver';
 import PLUGIN_OVERVIEW from './pluginSections/PLUGIN_OVERVIEW'; 
 import PLUGIN_USAGE from './pluginSections/PLUGIN_USAGE';
 import CHORD_LOGIC from './pluginSections/CHORD_LOGIC';
 import PLUGIN_DOWNLOAD from './pluginSections/PLUGIN_DOWNLOAD';
 import PLUGIN_POST from './pluginSections/PLUGIN_POST';
+import TableOfContents from './pluginSections/TableOfContents';
 import './Plugin.css';
-
-// プラグインの内容を定義
-const pluginContents = [
-  {
-    label: 'プラグインの概要',
-    link: '#PLUGIN_OVERVIEW',
-    children: [
-      { label: '対応環境', link: '#supported-environments' },
-      { label: '対応コード', link: '#supported-chords' },
-    ],
-  },
-  {
-    label: 'プラグインの使用方法',
-    link: '#PLUGIN_USAGE',
-    children: [
-      { label: '導入', link: '#supported-introduction' },
-      { label: '機能', link: '#supported-function' },
-    ],
-  },
-  {
-    label: 'コード検出ロジック',
-    link: '#CHORD_LOGIC',
-    children: [{ label: 'コード検出ロジックについて', link: '#chord-logic-details' }],
-  },
-  { label: 'プラグインのダウンロード', link: '#PLUGIN_DOWNLOAD' },
-  { label: 'POST', link: '#PLUGIN_POST' }
-];
 
 function Plugin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);  // ログイン状態を管理
@@ -59,31 +33,21 @@ function Plugin() {
 
   return (
     <div className="plugin-page">
-      <Sidebar contents={pluginContents} activeSection={activeSection} />
+      <Sidebar activeSection={activeSection} />
 
       <div className="plugin-content" id="top">
         <h4 className="plugin-title">【CHORDIN】和音コードをMIDI信号から検知するVSTプラグイン</h4>
+        <div className="plugin-meta">
+          <span className="tag">DTM</span>
+          <span className="tag">Plugin</span>
+          <span className="tag">VST</span>
+          <span className="tag">和音検出</span>
+          <span className="tag">Free</span>
+        </div>
         <p>公開日: {publishedDate} 最終更新日: {updatedDate}</p>
         <img src="/img/Plugin_title.png" alt="Plugin Title" className="plugin-title-image" />
 
-        <div className="toc-container">
-          <h2 className="toc-title">Contents</h2>
-          <ol className="toc-list">
-            {pluginContents.map((item, index) => (
-              <li key={index}>
-                {item.label}
-                {item.children && (
-                  <ol>
-                    {item.children.map((child, childIndex) => (
-                      <li key={childIndex}>{child.label}</li>
-                    ))}
-                  </ol>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
-
+        <TableOfContents />
         <PLUGIN_OVERVIEW />
         <PLUGIN_USAGE />
         <CHORD_LOGIC />

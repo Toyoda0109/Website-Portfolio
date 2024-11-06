@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   left: 0; /* 左側に固定 */
-  background-color: #f4f4f4; /* サイドバーの背景色 */
+  background-color: #eaeaea; /* サイドバーの背景色 */
   padding: 20px; /* 内部のパディング */
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@
 .bullet {
   width: 10px;
   height: 10px;
-  background-color: #aceaf2;
+  background-color: #a6afb0;
   border-radius: 3px;
   display: inline-block; /* インライン要素として扱う */
   margin-right: 10px;

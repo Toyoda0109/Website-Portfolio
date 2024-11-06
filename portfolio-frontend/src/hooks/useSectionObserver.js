@@ -14,8 +14,8 @@ export const useSectionObserver = (sections) => {
         });
       },
       {
-        threshold: 0.2,  // 50%以上表示されたとき
-        rootMargin: '0px 0px -100px 0px',  // 50px手前で反応
+        threshold: sections.id === 'PLUGIN_DOWNLOAD' || sections.id === 'PLUGIN_POST' ? 0.05 : 0,
+        rootMargin: sections.id === 'PLUGIN_DOWNLOAD' || sections.id === 'PLUGIN_POST' ? '0px 0px -60% 0px' : '0px 0px -50% 0px',
       }
     );
 

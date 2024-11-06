@@ -8,16 +8,20 @@ function PLUGIN_USAGE() {
       <section id="supported-introduction">
         <h5 className="sub-heading">導入</h5>
         <p>
+          事前にプラグインをダウンロードしておいてください。
+        </p>
+        <p>
           DAWを開いて、インストゥルメントトラックとMIDIトラックを立ち上げます(以下では、Cubase12を使用して説明します)。
         </p>
         <img src="/img/Plugin_use.jpeg" alt="Plugin_use" className="plugin-sub-image" />
         <p>
-          上記では、インストゥルメントとしてKontaktのピアノ音源を使用していますが、基本的には何を使っても問題ありません。インストゥルメントトラックに、オーディオinsertからCHORDINをインサートしてください。
+          上記では、インストゥルメントとしてKontaktのピアノ音源を使用していますが、基本的には何を使っても問題ありません(好きな音源に挿してください)。インストゥルメントトラックに、オーディオinsertからCHORDINをインサートしてください。
         </p>
         <img src="/img/Plugin_MIDI_Output.png" alt="Plugin_MIDI_Output" className="plugin-sub-image" />
         <p>
-          上記の画像を参考に、MIDIトラックに移動し、インスペクターよりMIDIインプットが「ALL MIDI INPUTS」になっているか確認してください。MIDIアウトプットは、Kontakt7(音源名)-Event inputから、Kontakt7 01(音源名):Ins. 1. CHORDIN-MIDI inputに変更してください。
+          上記の画像を参考に、MIDIトラックに移動し、インスペクターよりMIDIインプットが「ALL MIDI INPUTS」になっているか確認してください(画像の左中央の項目)。MIDIアウトプットは、Kontakt7(音源名)-Event inputから、Kontakt7 01(音源名):Ins. 1. CHORDIN-MIDI inputに変更してください。
         </p>
+        <p>このように設定することで、プラグインにMIDI信号が直接ルーティングされ、実際にCHORDINがMIDI信号を受け取って和音検出を行うことが可能となります。</p>
         <img src="/img/Plugin_using_demo.png" alt="Plugin_using_demo" className="plugin-sub-image" />
         <p>MIDIキーボードで鍵盤を鳴らして、プラグインが作動すればOKです。</p>
       </section>
@@ -26,7 +30,9 @@ function PLUGIN_USAGE() {
         <h5 className="sub-heading">機能</h5>
         <img src="/img/Plugin_Function.png" alt="Plugin_Function" className="plugin-function-image" />
         <p>
-          Select Scaleでは、Major ScalesまたはMinor Scalesを選ぶ項目がありますが、一応意味があるのでコード検出ロジックのセクションで詳しく説明します。MIDI NOTEでは、リアルタイムでMIDIキーボードの押されている鍵盤名を表示します。INTERVALでは、2つの音の間隔を表す度数を表示します。
+          Select Scaleでは、Major ScalesまたはMinor Scalesを選ぶ項目がありますが、一応意味があるのでコード検出ロジックのセクションで詳しく説明します。<br/>
+          MIDI NOTEでは、リアルタイムでMIDIキーボードの押されている鍵盤名を表示します。多分、MAXで9個くらい表示される。<br/>
+          INTERVALでは、2つの音の間隔を表す度数を表示します。3つ以上ノートが押されていると何も出ません。以下の表右側の様に表示されます。
         </p>
         <table className="striped centered responsive-table">
           <thead>
@@ -50,7 +56,7 @@ function PLUGIN_USAGE() {
           </tbody>
         </table>
         <p>
-          MIDIボタンやINTEボタンを押すと、MIDI NOTE、INTERVALの表示を非表示にすることができます。右下の歯車ボタンは、プラグインのウィンドウサイズを300×300～600×600まで変更可能です。
+          左下のMIDIボタンやINTEボタンを押すと、MIDI NOTE、INTERVALの表示を非表示にすることができます。右下の歯車ボタンは、プラグインのウィンドウサイズを300×300～600×600まで変更可能です。
         </p>
       </section>
     </section>
