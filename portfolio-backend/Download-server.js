@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 // ダウンロードのエンドポイントを作成
-app.get('/download', (req, res) => {
+app.get('/api/download', (req, res) => {
   const filePath = path.join(__dirname, 'files/CHORDIN.zip');
   
   // ファイルをダウンロードとして提供
@@ -16,6 +16,6 @@ app.get('/download', (req, res) => {
 });
 
 // サーバーを起動
-app.listen(3003, () => {
-  console.log('サーバーがポート3003で起動しました');
+app.listen(3002, () => {
+  console.log('サーバーがポート3002で起動しました');
 });
