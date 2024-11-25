@@ -1,7 +1,7 @@
 /* ロゴのスタイル */
 .brand-logo img {
-  height: 200px;  /* ロゴの高さを指定 */
-  width: auto;    /* アスペクト比を維持 */
+  height: 200px;  
+  width: auto;
   margin-top: -58px;
 }
 
@@ -12,12 +12,11 @@ ul.right {
 
 ul.right li a {
   font-size: 17px;
-  text-decoration: none;  /* 下線を消す */
-  color: black;           /* フォント色を黒に設定 */
-  transition: background-color 0.3s ease;  /* 背景色の変化を滑らかに */
+  color: black;
+  transition: background-color 0.3s ease;
   display: inline-block;
-  text-align: center;     /* テキストを中央揃え */
-  width: 170px;           /* メニューの横幅を指定 */
+  text-align: center;
+  width: 170px;
 }
 
 /* ホバー時の背景色とフォント色を変更 */
@@ -35,18 +34,18 @@ ul.right li a:hover {
     }
     
     .brand-logo img {
-      height: 150px; /* モバイル版ではロゴのサイズを小さく */
+      height: 150px;
       margin-top: 0;
     }
 }
 
 .nav-wrapper {
-  background-color: white;  /* 背景色を白に */
+  background-color: white;
 }
 
 .sidenav-trigger i {
   font-size: 30px;  /* ハンバーガーメニューのサイズ */
-  color: black;     /* ハンバーガーメニューの色 */
+  color: black;
 }
 
 header {

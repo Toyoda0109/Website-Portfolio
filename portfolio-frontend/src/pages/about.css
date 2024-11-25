@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'Josefin Sans Light';
+  src: url('../assets/fonts/josefin-sans-light-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.about-head-title {
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Josefin Sans Light', sans-serif;
+  color: #b77dab;
+  font-size: clamp(50px, 6vw, 75px);
+  border-bottom: 2px solid #b77dab;
+  padding-bottom: 10px;
+}
+
 .portfolio-header-img {
   width: 100%;
   height: 35vh;
@@ -21,14 +38,14 @@
 
 .profile-img {
   width: 25vw;
-  max-width: 200px; /* 最大幅を設定 */
+  max-width: 200px;
   border-radius: 50%;
-  aspect-ratio: 1 / 1; /* 縦横比を1:1に指定（正方形） */
+  aspect-ratio: 1 / 1; 
 }
 
 .profile-info {
-  padding-left: 20px; /* 既存の余白 */
-  margin-left: 20px; /* アイコンとの間に追加の間隔を設定 */
+  padding-left: 20px;
+  margin-left: 20px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
@@ -37,17 +54,18 @@
 
 .profile-info h3{
   text-align: center;
+  font-size: clamp(16px, 4vw, 32px);
 }
 
 .social-links {
   margin-top: 15px;
   display: flex;
-  gap: 10px; /* アイコン間のスペース */
+  gap: 10px;
 }
 
 .social-icon {
-  width: 30px; /* アイコンの幅 */
-  height: 30px; /* アイコンの高さ */
+  width: 30px;
+  height: 30px;
 }
 
 .about-website-content {
@@ -66,22 +84,34 @@
 
 .about-website-section h1 {
   text-align: center;
-  font-size: 1.8em;
   margin-bottom: 15px;
 }
 
+.tech-section h2,
 .skills-subsection h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-family: 'Roboto', sans-serif;
   text-align: center;
+  color: #333;
   margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 10px;
 }
+
+.tech-section h2::after,
+.skills-subsection h2::after {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 2px;
+  background-color:#727272;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
 
 .tech-section {
   margin-top: 30px;
-}
-
-.tech-section h2 {
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .tech-grid {
@@ -116,6 +146,6 @@
 }
 
 .blur-in.visible {
-  filter: blur(0);  /* クリアにする */
-  opacity: 1;  /* 表示 */
+  filter: blur(0); 
+  opacity: 1;
 }

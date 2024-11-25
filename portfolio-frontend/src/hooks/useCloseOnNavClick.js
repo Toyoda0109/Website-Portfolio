@@ -1,4 +1,3 @@
-// useCloseOnNavClick.js
 import { useEffect } from 'react';
 import M from 'materialize-css';
 

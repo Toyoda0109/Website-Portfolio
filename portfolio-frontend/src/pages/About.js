@@ -5,7 +5,7 @@ import useAnimationComplete from '../hooks/useAnimationComplete';
 import { useBlurEffect } from '../hooks/useBlurEffect';
 
 function About() {
-  // 3秒間のアニメーションの完了状態を管理
+  // 2.5秒間のアニメーションの完了状態を管理
   const animationComplete = useAnimationComplete(2500);
   
   // 各セクションの参照を作成
@@ -40,7 +40,7 @@ function About() {
           <div className="about-container">
             
             <section id="PROFILE_SECTION" className="profile-section blur-in" ref={profileSectionRef}>
-            <h1>Profile</h1>
+            <h1 class="about-head-title">Profile</h1>
               <div className="profile-content">
                 <div className="profile-icon">
                   <img 
@@ -53,7 +53,7 @@ function About() {
                 <div className="profile-info">
                   <h3>KODAI TOYODA</h3>
                   <p>
-                    26卒の情報理工学部の大学生です。ITエンジニアを目指しており、フロントエンドとバックエンドの両面でのスキル向上を目指しています。
+                    26卒, 情報理工学部の大学生です。ITエンジニアを目指しており、フロントエンドとバックエンドの両面でのスキル向上を目指しています。
                     大学では動的計画法や遺伝的アルゴリズムを活用した作曲支援ソフトの開発に取り組んでいます。作曲とプログラミングが好きで、作曲活動も行っています。
                   </p>
 
@@ -70,7 +70,7 @@ function About() {
             </section>
 
             <section id="ABOUT_WEBSITE_SECTION" className="about-website-section blur-in" ref={aboutWebsiteRef}>
-              <h1>About this website</h1>
+            <h1 class="about-head-title">About this website</h1>
               <div className="about-website-content">
                 <p>
                   このWebサイトは、作曲支援のために作成したVSTプラグインを配布する目的で制作しました。
@@ -89,7 +89,7 @@ function About() {
                       <p>React: サイトのユーザーインターフェースの構築やコンポーネントの管理</p>
                     </div>
                     <div className="tech-item">
-                      <img src="/img/Skill_Icon/css.svg" alt="CSS" className="tech-img" />
+                      <img src="/img/Skill_Icon/CSS.svg" alt="CSS" className="tech-img" />
                       <p>CSS: Webサイト全体のデザインやレイアウト(Materialize Css)</p>
                     </div>
                     <div className="tech-item">
@@ -114,13 +114,17 @@ function About() {
                       <img src="/img/Skill_Icon/MySQL-Light.svg" alt="MySQL" className="tech-img" />
                       <p>MySQL: 掲示板のデータ管理</p>
                     </div>
+                    <div className="tech-item">
+                      <img src="/img/Skill_Icon/AWS-Light.svg" alt="AWS" className="tech-img" />
+                      <p>AWS: 本Webサイトのデプロイ</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
 
             <section id="SKILLS_SECTION" className="skills-section blur-in" ref={skillsRef}>
-              <h1>Skills</h1>
+              <h1 class="about-head-title">Skills</h1>
               <div className="skills-content">
                 <p>
                   このセクションでは、その他使用したことのあるプログラミング言語やツールを提示しています。(実務経験は御座いません)
@@ -132,7 +136,7 @@ function About() {
                       <img src="/img/Skill_Icon/Java-Light.svg" alt="Java" className="tech-img" />
                     </div>
                     <div className="tech-item">
-                      <img src="/img/Skill_Icon/Cpp.svg" alt="Cpp" className="tech-img" />
+                      <img src="/img/Skill_Icon/CPP.svg" alt="Cpp" className="tech-img" />
                     </div>
                     <div className="tech-item">
                       <img src="/img/Skill_Icon/C.svg" alt="C" className="tech-img" />
@@ -159,7 +163,7 @@ function About() {
                         <img src="/img/Skill_Icon/Github-Dark.svg" alt="Git" className="tech-img" />
                       </div>
                       <div className="tech-item">
-                        <img src="/img/Skill_Icon/git.svg" alt="Git" className="tech-img" />
+                        <img src="/img/Skill_Icon/Git.svg" alt="Git" className="tech-img" />
                       </div>
                       <div className="tech-item">
                         <img src="/img/Skill_Icon/Eclipse-Light.svg" alt="Eclipse" className="tech-img" />

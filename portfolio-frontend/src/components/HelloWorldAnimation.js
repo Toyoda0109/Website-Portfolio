@@ -5,7 +5,7 @@ import './HelloWorldAnimation.css';
 const HelloWorldAnimation = () => {
   const text = "Hello World!";
   const [displayedText, setDisplayedText] = useState([]);
-  const animationComplete = useAnimationComplete(2500); // アニメーション完了後に表示
+  const animationComplete = useAnimationComplete(2500); // アニメーション完了後に表示(2500ms)
 
   useEffect(() => {
     setDisplayedText(text.split(''));

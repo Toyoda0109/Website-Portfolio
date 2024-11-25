@@ -3,10 +3,19 @@ import React, { useState, useEffect } from 'react';
 const BulletinBoard = ({ isAdmin }) => {
   const [posts, setPosts] = useState([]);
 
+  // 環境変数からエンドポイントを取得
+  const API_FETCH_POSTS_URL = process.env.REACT_APP_API_FETCH_POSTS_URL;
+  const API_SUBMIT_POST_URL = process.env.REACT_APP_API_SUBMIT_POST_URL;
+
   // 投稿一覧を取得する関数
   const fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:8888/bulletin/fetch_posts.php');
+      const response = await fetch(API_FETCH_POSTS_URL);
+
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status}`);
+      }
+
       const data = await response.json();
       setPosts(data);
     } catch (error) {
@@ -15,26 +24,29 @@ const BulletinBoard = ({ isAdmin }) => {
   };
 
   useEffect(() => {
-    fetchPosts(); // 初期表示時に投稿一覧を取得
+    fetchPosts(); // 初回ロード時に投稿一覧を取得
   }, []);
 
-  // 投稿を送信する関数 (管理者のみ使用)
+  // 投稿を送信する関数（管理者専用）
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('token'); // 管理者のトークンを使用
+    const token = localStorage.getItem('token'); // 管理者トークンを取得
+    const comment = e.target.comment.value;
+
     try {
-      const response = await fetch('http://localhost:8888/bulletin/submit.php', {
+      const response = await fetch(API_SUBMIT_POST_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // トークンを送信
+          'Authorization': `Bearer ${token}`,
         },
-        body: JSON.stringify({ name: '管理者', comment: e.target.comment.value }),
+        body: JSON.stringify({ name: '管理者', comment }), // 名前を固定で送信
       });
 
       const result = await response.json();
       if (result.success) {
-        fetchPosts(); // 投稿後にリフレッシュ
+        fetchPosts(); // 成功後に投稿一覧を更新
+        e.target.reset(); // フォームをリセット
       } else {
         console.error(`投稿エラー: ${result.error}`);
       }
@@ -43,37 +55,34 @@ const BulletinBoard = ({ isAdmin }) => {
     }
   };
 
-  // if文を使ってフォームと投稿表示を制御
-  let adminForm = null;
-  if (isAdmin) {
-    adminForm = (
-      <form onSubmit={handleSubmit}>
-        <textarea name="comment" placeholder="お知らせを入力" required />
-        <button type="submit">投稿</button>
-      </form>
-    );
-  }
-
   return (
     <div>
-      {/* 管理者向けフォームの表示 */}
-      {adminForm}
+      {/* 投稿フォーム（管理者のみ表示） */}
+      {isAdmin && (
+        <div>
+          <form onSubmit={handleSubmit}>
+            <textarea name="comment" placeholder="コメントを入力" required />
+            <button type="submit">投稿</button>
+          </form>
+          <button
+            onClick={() => {
+              localStorage.removeItem('token'); // トークンを削除
+              window.location.reload(); // ページをリロードして状態をリセット
+            }}
+            style={{ marginTop: '10px' }}
+          >
+            ログアウト
+          </button>
+        </div>
+      )}
 
       <ul>
-        {posts.map((post, index) => {
-          let dateDisplay = '日付不明';
-          if (post.created_at && !isNaN(new Date(post.created_at))) {
-            dateDisplay = new Date(post.created_at).toLocaleString(); // 日付と時間を表示
-          }
-
-          return (
-            <li key={index}>
-              <strong style={{ color: 'blue' }}>{post.name}:</strong> {/* 管理者: の形式で表示 */}
-              <span> {dateDisplay}</span>
-              <p>{post.comment}</p>
-            </li>
-          );
-        })}
+        {posts.map((post, index) => (
+          <li key={index} style={{ marginBottom: '15px' }}>
+            <strong style={{ color: 'blue' }}>{post.name}</strong>: {new Date(post.created_at).toLocaleString()}
+            <p>{post.comment}</p>
+          </li>
+        ))}
       </ul>
     </div>
   );

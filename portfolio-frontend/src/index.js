@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';  // ReactDOMの新しいAPIをインポート
-import App from './App';  // App.jsをインポート
-import 'materialize-css/dist/css/materialize.min.css';  // MaterializeのCSSをインポート
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import 'materialize-css/dist/css/materialize.min.css';
 
-// root要素に対してcreateRootを使用
+
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 
 root.render(
   <React.StrictMode>
-    <App />  {/* Appコンポーネントをレンダリング */}
+    <App />
   </React.StrictMode>
 );

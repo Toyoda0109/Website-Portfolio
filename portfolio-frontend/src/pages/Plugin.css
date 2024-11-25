@@ -1,4 +1,3 @@
-/* プラグインページのスタイル */
 .plugin-page {
   display: flex;
   padding-top: 80px;
@@ -11,14 +10,14 @@
 }
 
 .tag {
-  background-color: #f0f0f0; /* タグの背景色 */
-  color: #333; /* テキストの色 */
-  padding: 5px 10px; /* 内側の余白 */
-  font-size: 0.9em; /* フォントサイズ */
-  border: 1px solid #ccc; /* 枠線 */
-  border-radius: 5px; /* 角を丸くする */
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   display: inline-block;
-  margin-right: 5px; /* タグ間のスペース */
+  margin-right: 5px;
 }
 
 
@@ -27,8 +26,8 @@
 #CHORD_LOGIC,
 #PLUGIN_DOWNLOAD,
 #PLUGIN_POST {
-  margin-bottom: 60px; /* 各セクションの間に50pxの余白を追加 */
-  padding-top: 20px;   /* 各セクションの上部に20pxの余白を追加 */
+  margin-bottom: 60px;
+  padding-top: 20px;
 }
 
 /* コンテンツ領域のスタイル */
@@ -44,7 +43,7 @@
     margin-left: 0;
     padding-left: 15px;
     padding-right: 15px;
-    box-sizing: border-box; /* paddingを含めて全体の幅を100%に保つ */
+    box-sizing: border-box;
   }
 }
 
@@ -91,3 +90,20 @@
   margin: 0 auto;
 }
 
+.plugin-burden-images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.plugin-item img {
+  width: 40vw;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.plugin-item {
+  text-align: center;
+}

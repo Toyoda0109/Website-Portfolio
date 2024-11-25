@@ -6,7 +6,14 @@ export const useAdminIp = () => {
   useEffect(() => {
     const checkAdminIp = async () => {
       try {
-        const response = await fetch('http://localhost:3002/check-ip');
+        const API_AUTH_URL = process.env.REACT_APP_API_AUTH_URL;
+
+        if (!API_AUTH_URL) {
+          console.error('環境変数 REACT_APP_API_AUTH_URL が設定されていません');
+          return;
+        }
+
+        const response = await fetch(API_AUTH_URL);
         const data = await response.json();
 
         if (data.isAdmin) {

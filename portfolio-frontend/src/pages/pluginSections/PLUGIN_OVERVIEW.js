@@ -78,6 +78,30 @@ function PLUGIN_OVERVIEW() {
         </ul>
       </section>
 
+      <section id="plugin-burden">
+          <h5 className="sub-heading">プラグインのPC負荷について</h5>
+          <div className="plugin-burden-images">
+            <div className="plugin-item">
+              <img src="/img/CHORDIN_Burden.png" alt="CHORDIN Burden" />
+              <p>CHORDINのPC負荷</p>
+            </div>
+            <div className="plugin-item">
+              <img src="/img/OTT_Burden.png" alt="OTT Burden" />
+              <p>OTTのPC負荷</p>
+            </div>
+          </div>
+          <p>
+            上記では、本プラグインとOTTのPC負荷について調べてみました。どちらも鍵盤を複数押した結果ですが、これといった負荷はかかってないと思います。
+          </p>
+          <ul>
+            <li>Real-Time: プラグインがリアルタイムでどれだけCPUを使用しているか。</li>
+            <li>Peak: CPUが一瞬で処理する必要がある負荷のピーク値。</li>
+            <li>ASIO-Guard: ASIO-Guardが負荷をどれだけ処理しているか。</li>
+            <li>Disk Cache: ディスクからオーディオファイルを読み込む際の負荷</li>
+          </ul>
+      </section>
+
+
       <section id="supported-chords">
         <h5 className="sub-heading">対応コード</h5>
         <p>以下のコードを検出できます。要望があれば増やそうかな。</p>

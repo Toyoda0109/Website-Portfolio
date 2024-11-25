@@ -1,45 +1,54 @@
 import React from 'react';
-import './TableOfContents.css'
+import useScrollToSection from '../../hooks/useScrollToSection';
+import './TableOfContents.css';
 
 function TableOfContents() {
+  const scrollToSection = useScrollToSection(); // カスタムフックからスクロール処理を取得
+
+  // スクロール処理を簡略化する関数
+  const handleScroll = (sectionId) => () => {
+    scrollToSection(sectionId);
+  };
+
   return (
     <div className="toc-container">
       <h2 className="toc-title">Contents</h2>
       <ol className="toc-list">
         {/* プラグインの概要 */}
         <li>
-          <a href="#PLUGIN_OVERVIEW">プラグインの概要</a>
+          <span onClick={handleScroll('PLUGIN_OVERVIEW')} className="toc-link">プラグインの概要</span>
           <ol>
-            <li><a href="#supported-environments">対応環境</a></li>
-            <li><a href="#supported-chords">対応コード</a></li>
+            <li><span onClick={handleScroll('supported-environments')} className="toc-link">対応環境</span></li>
+            <li><span onClick={handleScroll('plugin-burden')} className="toc-link">プラグインのPC負荷について</span></li>
+            <li><span onClick={handleScroll('supported-chords')} className="toc-link">対応コード</span></li>
           </ol>
         </li>
 
         {/* プラグインの使用方法 */}
         <li>
-          <a href="#PLUGIN_USAGE">プラグインの使用方法</a>
+          <span onClick={handleScroll('PLUGIN_USAGE')} className="toc-link">プラグインの使用方法</span>
           <ol>
-            <li><a href="#supported-introduction">導入</a></li>
-            <li><a href="#supported-function">機能</a></li>
+            <li><span onClick={handleScroll('supported-introduction')} className="toc-link">導入</span></li>
+            <li><span onClick={handleScroll('supported-function')} className="toc-link">機能</span></li>
           </ol>
         </li>
 
         {/* コード検出ロジック */}
         <li>
-          <a href="#CHORD_LOGIC">コード検出ロジック</a>
+          <span onClick={handleScroll('CHORD_LOGIC')} className="toc-link">コード検出ロジック</span>
           <ol>
-            <li><a href="#chord-logic-details">コード検出ロジックについて</a></li>
+            <li><span onClick={handleScroll('chord-logic-details')} className="toc-link">コード検出ロジックについて</span></li>
           </ol>
         </li>
 
         {/* プラグインのダウンロード */}
         <li>
-          <a href="#PLUGIN_DOWNLOAD">プラグインのダウンロード</a>
+          <span onClick={handleScroll('PLUGIN_DOWNLOAD')} className="toc-link">プラグインのダウンロード</span>
         </li>
 
         {/* POST */}
         <li>
-          <a href="#PLUGIN_POST">POST</a>
+          <span onClick={handleScroll('PLUGIN_POST')} className="toc-link">POST</span>
         </li>
       </ol>
     </div>

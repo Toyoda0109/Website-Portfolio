@@ -1,40 +1,45 @@
+@font-face {
+  font-family: 'Josefin Sans Light';
+  src: url('../assets/fonts/josefin-sans-light-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* コンテナ設定 */
 .hello-world-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
 }
 
 /* 枠線の設定 */
 .hello-world-border {
-  display: inline-block;
   padding: 90px 90px;
   border: 2px solid white;
   border-radius: 10px;
-  position: relative;
-  z-index: 20; /* オーバーレイより前面 */
+  z-index: 20;
 }
 
 /* テキストのフェードアウトとウェーブアニメーション */
 .hello-world-text {
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: 'Josefin Sans Light', sans-serif;
+  font-size: clamp(40px, 5vw, 60px);
+  white-space: nowrap;
+  margin-bottom: 20px;
   color: rgb(132, 132, 132);
-  display: flex;
   animation: fadeOutMove 0.7s 1.5s forwards cubic-bezier(0.9, 0, 0.4, 1);
-  z-index: 25; /* 文字をオーバーレイの前に表示 */
+  z-index: 25;
 }
 
 .wave-text {
   display: inline-block;
   opacity: 0;
   animation: waveAppear 0.5s forwards ease-in-out;
+  margin-bottom: 1.2em;
 }
 
-/* オーバーレイ設定（基本） */
+/* オーバーレイ設定 */
 .left-triangle-overlay,
 .right-triangle-overlay {
   position: absolute;
@@ -163,7 +168,7 @@
   position: absolute;
   top: 55%;
   left: 30%;
-  height: 4px;
+  height: 3px;
   width: 0;
   background-color: rgb(138, 138, 138);
   animation: lineGrow 0.5s forwards ease-in 0.6s, lineShrink 0.6s forwards ease 2.1s; 
@@ -176,17 +181,17 @@
     width: 0;
   }
   100% {
-    width: 40%;
+    width: 40vw;;
   }
 }
 
 @keyframes lineShrink {
   0% {
-    width: 40%;
+    width: 40vw;
     left: 30%;
   }
   10% {
-    width: 50%;
+    width: 50vw;
     left: 25%;
   }
   100% {

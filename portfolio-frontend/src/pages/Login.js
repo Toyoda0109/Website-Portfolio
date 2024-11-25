@@ -1,9 +1,9 @@
 import React from 'react';
-import { useAdminIp } from '../hooks/useAdminIp';  // IPチェック用フック
-import { useLogin } from '../hooks/useLogin';  // ログイン処理用フック
+import { useLogin } from '../hooks/useLogin';
+import { useAccessCheck } from '../hooks/useAccessCheck';
 
 const Login = ({ onLoginSuccess }) => {
-  const isAdminIp = useAdminIp();  // カスタムフックでIPをチェック
+  const { hasAccess, error } = useAccessCheck();
   const {
     username,
     setUsername,
@@ -11,17 +11,21 @@ const Login = ({ onLoginSuccess }) => {
     setPassword,
     loginError,
     handleSubmit,
-  } = useLogin(onLoginSuccess);  // カスタムフックでログインロジックを処理
+  } = useLogin(onLoginSuccess);
 
-  // 管理者IPでない場合、アクセス権限がないと表示
-  if (!isAdminIp) {
-    return ;
+  if (hasAccess === null) {
+    return <p>確認中...</p>;
+  }
+
+  if (!hasAccess) {
+    return <p>アクセスが許可されていません。</p>;
   }
 
   return (
     <div>
       <h2>管理者ログイン</h2>
       {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <input

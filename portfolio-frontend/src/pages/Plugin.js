@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import BulletinBoard from './BulletinBoard';
 import Login from './Login';
 import { useSectionObserver } from '../hooks/useSectionObserver';
+import { useAccessCheck } from '../hooks/useAccessCheck';
 import PLUGIN_OVERVIEW from './pluginSections/PLUGIN_OVERVIEW'; 
 import PLUGIN_USAGE from './pluginSections/PLUGIN_USAGE';
 import CHORD_LOGIC from './pluginSections/CHORD_LOGIC';
@@ -14,8 +15,9 @@ import './Plugin.css';
 function Plugin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);  // ログイン状態を管理
   const [sections, setSections] = useState([]);         // セクション管理用のステートを追加
+  const { hasAccess } = useAccessCheck();               // IP確認結果を取得
 
-  const publishedDate = "2024-01-01";  // 公開日を手動で設定
+  const publishedDate = "2024/11/16";
   const updatedDate = new Date(document.lastModified).toLocaleDateString();  // 最終更新日を取得
 
   // セクションを監視するためのカスタムフック
@@ -24,7 +26,7 @@ function Plugin() {
     setSections(mainSections);
   }, []);
 
-  const activeSection = useSectionObserver(sections);  // カスタムフックでアクティブなセクションを取得
+  const activeSection = useSectionObserver(sections);  // アクティブなセクションを取得
 
   // ログイン成功時の処理
   const handleLoginSuccess = () => {
@@ -54,9 +56,9 @@ function Plugin() {
         <PLUGIN_DOWNLOAD />
         <PLUGIN_POST />
 
+  
         <BulletinBoard isAdmin={isLoggedIn} />
-
-        {!isLoggedIn && (
+        {hasAccess && !isLoggedIn && (
           <Login onLoginSuccess={handleLoginSuccess} />
         )}
       </div>

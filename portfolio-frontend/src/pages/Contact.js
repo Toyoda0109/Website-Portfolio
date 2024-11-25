@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useContactForm } from '../hooks/useContactForm';
 import './Contact.css';
 
@@ -9,14 +9,16 @@ const Contact = () => {
     <div className="contact-form-container">
       <div className="contact-form">
         <h1>Contact</h1>
-        <p>プラグインに関する質問や要望、不具合、その他のご連絡は、下記のフォームをご利用いただくか、X（旧Twitter）にてお知らせください！</p>
+        <p>
+          プラグインに関する質問や要望、不具合、その他のご連絡は、下記のフォームをご利用いただくか、X（旧Twitter）にてお知らせください！
+        </p>
         <form onSubmit={handleSubmit} className="col s12">
           <div className="input-field">
             <input
               id="name"
               type="text"
               name="name"
-              value={formData.name}  // 状態に基づいて値を更新
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -27,7 +29,7 @@ const Contact = () => {
               id="email"
               type="email"
               name="email"
-              value={formData.email}  // 状態に基づいて値を更新
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -38,7 +40,7 @@ const Contact = () => {
               id="message"
               name="message"
               className="materialize-textarea"
-              value={formData.message}  // 状態に基づいて値を更新
+              value={formData.message}
               onChange={handleChange}
               required
             />
@@ -52,7 +54,7 @@ const Contact = () => {
             {isSubmitting ? '送信中...' : '送信'}
           </button>
         </form>
-        {statusMessage && <p className="thank-you-message">{statusMessage}</p>}  {/* 送信結果メッセージを大きく表示 */}
+        {statusMessage && <p className="thank-you-message">{statusMessage}</p>}
       </div>
     </div>
   );

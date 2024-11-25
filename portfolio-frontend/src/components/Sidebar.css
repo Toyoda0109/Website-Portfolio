@@ -1,27 +1,27 @@
 /* サイドバーのスタイル */
 .sidebar {
-  width: 20%; /* サイドバーの幅 */
+  width: 20%;
   position: fixed; /* スクロールしてもサイドバーは固定 */
   top: 0;
   bottom: 0;
-  left: 0; /* 左側に固定 */
-  background-color: #eaeaea; /* サイドバーの背景色 */
-  padding: 20px; /* 内部のパディング */
+  left: 0;
+  background-color: #eaeaea;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .sidebar-main-heading{
-  color: #737272; /* 色を変更 */
-  font-size: 15px; /* フォントサイズを変更 */
-  font-weight: bold; /* フォントの太さを変更 */
+  color: #737272;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .sidebar-sub-heading{
-  color: #737272; /* 色を変更 */
-  font-size: 13px; /* フォントサイズを変更 */
-  font-weight: bold; /* フォントの太さを変更 */
+  color: #737272;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 /* リスト全体にスペースを追加 */
@@ -43,7 +43,7 @@
   padding-left: 20px;
   margin-bottom: 10px;
   display: block;
-  text-align: left; /* サブリストは左揃え */
+  text-align: left;
 }
 
 /* バレットのデザイン（見出し1のバレット） */
@@ -52,7 +52,7 @@
   height: 10px;
   background-color: #a6afb0;
   border-radius: 3px;
-  display: inline-block; /* インライン要素として扱う */
+  display: inline-block;
   margin-right: 10px;
 }
 
@@ -62,7 +62,7 @@
   height: 5px;
   background-color: #c5c5c5;
   border-radius: 50%;
-  display: inline-block; /* インライン要素として扱う */
+  display: inline-block;
   margin-right: 10px;
 }
 
@@ -74,16 +74,16 @@
 }
 
 .sidebar-main-heading.active {
-  color: rgb(183, 183, 183); /* アクティブな項目の色 */
+  color: rgb(183, 183, 183);
   font-weight: bold;
 }
 
 .sidebar-main-heading {
-  display: inline-block; /* モーションを適用できるように */
+  display: inline-block;
   transition: transform 0.3s ease; /* 移動時のモーション */
 }
 
 .sidebar-main-heading.active {
   transform: translateX(10px); /* アクティブ時に右に10px移動 */
-  font-weight: bold; /* 強調 */
+  font-weight: bold;
 }
